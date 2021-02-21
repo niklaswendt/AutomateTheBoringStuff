@@ -18,7 +18,7 @@ def collatz(number):
 
 try:
     number = int(input("Choose any integer greater than 1 for Collatz: "))
-    ops = 1
+    ops = 0
     if number < 1:
         print("This number is too small for the Collatz sequence")
     elif number == 1:
