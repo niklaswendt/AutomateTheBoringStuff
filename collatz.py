@@ -18,12 +18,18 @@ def collatz(number):
 
 try:
     number = int(input("Choose any integer greater than 1 for Collatz: "))
-    result = collatz(number)
     ops = 1
-    while result != 1:
-        result = collatz(result)
-        time.sleep(0.1)
-        ops = ops + 1
+    if number < 1:
+        print("This number is too small for the Collatz sequence")
+    elif number == 1:
+        print("Collatz sequence done.")
+    else:
+        result = collatz(number)
+        while result != 1:
+            result = collatz(result)
+            time.sleep(0.1)
+            ops = ops + 1
+        collatz(result)
     print(f"Collatz sequence took {ops} operations.")
 
 except ValueError:
